@@ -2,6 +2,9 @@ package com.wjp.dao.shiro.entity;
 
 import java.util.Date;
 
+/**
+ * @author weijupeng
+ */
 public class Demo {
     private Long id;
 
