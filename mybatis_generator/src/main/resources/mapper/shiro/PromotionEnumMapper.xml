@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wjp.dao.shiro.mapper.PromotionEnumMapper">
+  <resultMap id="BaseResultMap" type="com.wjp.dao.shiro.entity.PromotionEnum">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="enum_type" jdbcType="VARCHAR" property="enumType" />
+    <result column="enum_code" jdbcType="VARCHAR" property="enumCode" />
+    <result column="enum_name" jdbcType="VARCHAR" property="enumName" />
+    <result column="sort_no" jdbcType="INTEGER" property="sortNo" />
+    <result column="is_delete" jdbcType="TINYINT" property="isDelete" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="updated_time" jdbcType="TIMESTAMP" property="updatedTime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.wjp.dao.shiro.entity.PromotionEnum">
+    insert into t_promotion_enum (id, enum_type, enum_code, 
+      enum_name, sort_no, is_delete, 
+      created_time, updated_time)
+    values (#{id,jdbcType=BIGINT}, #{enumType,jdbcType=VARCHAR}, #{enumCode,jdbcType=VARCHAR}, 
+      #{enumName,jdbcType=VARCHAR}, #{sortNo,jdbcType=INTEGER}, #{isDelete,jdbcType=TINYINT}, 
+      #{createdTime,jdbcType=TIMESTAMP}, #{updatedTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wjp.dao.shiro.entity.PromotionEnum">
+    insert into t_promotion_enum
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="enumType != null">
+        enum_type,
+      </if>
+      <if test="enumCode != null">
+        enum_code,
+      </if>
+      <if test="enumName != null">
+        enum_name,
+      </if>
+      <if test="sortNo != null">
+        sort_no,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="updatedTime != null">
+        updated_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="enumType != null">
+        #{enumType,jdbcType=VARCHAR},
+      </if>
+      <if test="enumCode != null">
+        #{enumCode,jdbcType=VARCHAR},
+      </if>
+      <if test="enumName != null">
+        #{enumName,jdbcType=VARCHAR},
+      </if>
+      <if test="sortNo != null">
+        #{sortNo,jdbcType=INTEGER},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=TINYINT},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedTime != null">
+        #{updatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.wjp.dao.shiro.entity.PromotionEnum">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="enum_type" jdbcType="VARCHAR" property="enumType" />
+    <result column="enum_code" jdbcType="VARCHAR" property="enumCode" />
+    <result column="enum_name" jdbcType="VARCHAR" property="enumName" />
+    <result column="sort_no" jdbcType="INTEGER" property="sortNo" />
+    <result column="is_delete" jdbcType="TINYINT" property="isDelete" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="updated_time" jdbcType="TIMESTAMP" property="updatedTime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.wjp.dao.shiro.entity.PromotionEnum">
+    insert into t_promotion_enum (id, enum_type, enum_code, 
+      enum_name, sort_no, is_delete, 
+      created_time, updated_time)
+    values (#{id,jdbcType=BIGINT}, #{enumType,jdbcType=VARCHAR}, #{enumCode,jdbcType=VARCHAR}, 
+      #{enumName,jdbcType=VARCHAR}, #{sortNo,jdbcType=INTEGER}, #{isDelete,jdbcType=TINYINT}, 
+      #{createdTime,jdbcType=TIMESTAMP}, #{updatedTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wjp.dao.shiro.entity.PromotionEnum">
+    insert into t_promotion_enum
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="enumType != null">
+        enum_type,
+      </if>
+      <if test="enumCode != null">
+        enum_code,
+      </if>
+      <if test="enumName != null">
+        enum_name,
+      </if>
+      <if test="sortNo != null">
+        sort_no,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="updatedTime != null">
+        updated_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="enumType != null">
+        #{enumType,jdbcType=VARCHAR},
+      </if>
+      <if test="enumCode != null">
+        #{enumCode,jdbcType=VARCHAR},
+      </if>
+      <if test="enumName != null">
+        #{enumName,jdbcType=VARCHAR},
+      </if>
+      <if test="sortNo != null">
+        #{sortNo,jdbcType=INTEGER},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=TINYINT},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedTime != null">
+        #{updatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

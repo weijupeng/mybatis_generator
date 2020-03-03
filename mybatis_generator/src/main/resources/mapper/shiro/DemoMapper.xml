@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wjp.dao.shiro.mapper.DemoMapper">
+  <resultMap id="BaseResultMap" type="com.wjp.dao.shiro.entity.Demo">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="enum_type" jdbcType="VARCHAR" property="enumType" />
+    <result column="enum_code" jdbcType="VARCHAR" property="enumCode" />
+    <result column="code_type" jdbcType="TINYINT" property="codeType" />
+    <result column="enum_name" jdbcType="VARCHAR" property="enumName" />
+    <result column="enum_description" jdbcType="VARCHAR" property="enumDescription" />
+    <result column="enum_attribute" jdbcType="VARCHAR" property="enumAttribute" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="sort_no" jdbcType="SMALLINT" property="sortNo" />
+    <result column="is_delete" jdbcType="TINYINT" property="isDelete" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.wjp.dao.shiro.entity.Demo">
+    insert into t_enum_code (id, enum_type, enum_code, 
+      code_type, enum_name, enum_description, 
+      enum_attribute, status, sort_no, 
+      is_delete, create_time, update_time
+      )
+    values (#{id,jdbcType=BIGINT}, #{enumType,jdbcType=VARCHAR}, #{enumCode,jdbcType=VARCHAR}, 
+      #{codeType,jdbcType=TINYINT}, #{enumName,jdbcType=VARCHAR}, #{enumDescription,jdbcType=VARCHAR}, 
+      #{enumAttribute,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, #{sortNo,jdbcType=SMALLINT}, 
+      #{isDelete,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wjp.dao.shiro.entity.Demo">
+    insert into t_enum_code
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="enumType != null">
+        enum_type,
+      </if>
+      <if test="enumCode != null">
+        enum_code,
+      </if>
+      <if test="codeType != null">
+        code_type,
+      </if>
+      <if test="enumName != null">
+        enum_name,
+      </if>
+      <if test="enumDescription != null">
+        enum_description,
+      </if>
+      <if test="enumAttribute != null">
+        enum_attribute,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="sortNo != null">
+        sort_no,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="enumType != null">
+        #{enumType,jdbcType=VARCHAR},
+      </if>
+      <if test="enumCode != null">
+        #{enumCode,jdbcType=VARCHAR},
+      </if>
+      <if test="codeType != null">
+        #{codeType,jdbcType=TINYINT},
+      </if>
+      <if test="enumName != null">
+        #{enumName,jdbcType=VARCHAR},
+      </if>
+      <if test="enumDescription != null">
+        #{enumDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="enumAttribute != null">
+        #{enumAttribute,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="sortNo != null">
+        #{sortNo,jdbcType=SMALLINT},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.wjp.dao.shiro.entity.Demo">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="enum_name" jdbcType="VARCHAR" property="enumName" />
+    <result column="code_value" jdbcType="VARCHAR" property="codeValue" />
+    <result column="code_type" jdbcType="TINYINT" property="codeType" />
+    <result column="code_name" jdbcType="VARCHAR" property="codeName" />
+    <result column="code_description" jdbcType="VARCHAR" property="codeDescription" />
+    <result column="code_attribute" jdbcType="VARCHAR" property="codeAttribute" />
+    <result column="sort_no" jdbcType="SMALLINT" property="sortNo" />
+    <result column="is_deleted" jdbcType="TINYINT" property="isDeleted" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="updated_time" jdbcType="TIMESTAMP" property="updatedTime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.wjp.dao.shiro.entity.Demo">
+    insert into t_enum_code (id, enum_name, code_value, 
+      code_type, code_name, code_description, 
+      code_attribute, sort_no, is_deleted, 
+      created_time, updated_time)
+    values (#{id,jdbcType=BIGINT}, #{enumName,jdbcType=VARCHAR}, #{codeValue,jdbcType=VARCHAR}, 
+      #{codeType,jdbcType=TINYINT}, #{codeName,jdbcType=VARCHAR}, #{codeDescription,jdbcType=VARCHAR}, 
+      #{codeAttribute,jdbcType=VARCHAR}, #{sortNo,jdbcType=SMALLINT}, #{isDeleted,jdbcType=TINYINT}, 
+      #{createdTime,jdbcType=TIMESTAMP}, #{updatedTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wjp.dao.shiro.entity.Demo">
+    insert into t_enum_code
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="enumName != null">
+        enum_name,
+      </if>
+      <if test="codeValue != null">
+        code_value,
+      </if>
+      <if test="codeType != null">
+        code_type,
+      </if>
+      <if test="codeName != null">
+        code_name,
+      </if>
+      <if test="codeDescription != null">
+        code_description,
+      </if>
+      <if test="codeAttribute != null">
+        code_attribute,
+      </if>
+      <if test="sortNo != null">
+        sort_no,
+      </if>
+      <if test="isDeleted != null">
+        is_deleted,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="updatedTime != null">
+        updated_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="enumName != null">
+        #{enumName,jdbcType=VARCHAR},
+      </if>
+      <if test="codeValue != null">
+        #{codeValue,jdbcType=VARCHAR},
+      </if>
+      <if test="codeType != null">
+        #{codeType,jdbcType=TINYINT},
+      </if>
+      <if test="codeName != null">
+        #{codeName,jdbcType=VARCHAR},
+      </if>
+      <if test="codeDescription != null">
+        #{codeDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="codeAttribute != null">
+        #{codeAttribute,jdbcType=VARCHAR},
+      </if>
+      <if test="sortNo != null">
+        #{sortNo,jdbcType=SMALLINT},
+      </if>
+      <if test="isDeleted != null">
+        #{isDeleted,jdbcType=TINYINT},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedTime != null">
+        #{updatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.wjp.dao.shiro.entity.Demo">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="enum_type" jdbcType="VARCHAR" property="enumType" />
+    <result column="enum_code" jdbcType="VARCHAR" property="enumCode" />
+    <result column="code_type" jdbcType="TINYINT" property="codeType" />
+    <result column="enum_name" jdbcType="VARCHAR" property="enumName" />
+    <result column="enum_description" jdbcType="VARCHAR" property="enumDescription" />
+    <result column="enum_attribute" jdbcType="VARCHAR" property="enumAttribute" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="sort_no" jdbcType="SMALLINT" property="sortNo" />
+    <result column="is_delete" jdbcType="TINYINT" property="isDelete" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.wjp.dao.shiro.entity.Demo">
+    insert into t_enum_code (id, enum_type, enum_code, 
+      code_type, enum_name, enum_description, 
+      enum_attribute, status, sort_no, 
+      is_delete, create_time, update_time
+      )
+    values (#{id,jdbcType=BIGINT}, #{enumType,jdbcType=VARCHAR}, #{enumCode,jdbcType=VARCHAR}, 
+      #{codeType,jdbcType=TINYINT}, #{enumName,jdbcType=VARCHAR}, #{enumDescription,jdbcType=VARCHAR}, 
+      #{enumAttribute,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, #{sortNo,jdbcType=SMALLINT}, 
+      #{isDelete,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wjp.dao.shiro.entity.Demo">
+    insert into t_enum_code
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="enumType != null">
+        enum_type,
+      </if>
+      <if test="enumCode != null">
+        enum_code,
+      </if>
+      <if test="codeType != null">
+        code_type,
+      </if>
+      <if test="enumName != null">
+        enum_name,
+      </if>
+      <if test="enumDescription != null">
+        enum_description,
+      </if>
+      <if test="enumAttribute != null">
+        enum_attribute,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="sortNo != null">
+        sort_no,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="enumType != null">
+        #{enumType,jdbcType=VARCHAR},
+      </if>
+      <if test="enumCode != null">
+        #{enumCode,jdbcType=VARCHAR},
+      </if>
+      <if test="codeType != null">
+        #{codeType,jdbcType=TINYINT},
+      </if>
+      <if test="enumName != null">
+        #{enumName,jdbcType=VARCHAR},
+      </if>
+      <if test="enumDescription != null">
+        #{enumDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="enumAttribute != null">
+        #{enumAttribute,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="sortNo != null">
+        #{sortNo,jdbcType=SMALLINT},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

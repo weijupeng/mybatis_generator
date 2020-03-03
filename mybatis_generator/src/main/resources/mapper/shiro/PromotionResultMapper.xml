@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wjp.dao.shiro.mapper.PromotionResultMapper" >
+  <resultMap id="BaseResultMap" type="com.wjp.dao.shiro.entity.PromotionResult" >
+    <result column="id" property="id" jdbcType="BIGINT" />
+    <result column="record_id" property="recordId" jdbcType="BIGINT" />
+    <result column="executor" property="executor" jdbcType="VARCHAR" />
+    <result column="execute_status" property="executeStatus" jdbcType="TINYINT" />
+    <result column="execute_label" property="executeLabel" jdbcType="VARCHAR" />
+    <result column="execute_result" property="executeResult" jdbcType="TINYINT" />
+    <result column="execute_result_desc" property="executeResultDesc" jdbcType="VARCHAR" />
+    <result column="created_time" property="createdTime" jdbcType="TIMESTAMP" />
+    <result column="updated_time" property="updatedTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <insert id="insert" parameterType="com.wjp.dao.shiro.entity.PromotionResult" >
+    insert into t_promotion_result (id, record_id, executor, 
+      execute_status, execute_label, execute_result, 
+      execute_result_desc, created_time, updated_time
+      )
+    values (#{id,jdbcType=BIGINT}, #{recordId,jdbcType=BIGINT}, #{executor,jdbcType=VARCHAR}, 
+      #{executeStatus,jdbcType=TINYINT}, #{executeLabel,jdbcType=VARCHAR}, #{executeResult,jdbcType=TINYINT}, 
+      #{executeResultDesc,jdbcType=VARCHAR}, #{createdTime,jdbcType=TIMESTAMP}, #{updatedTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wjp.dao.shiro.entity.PromotionResult" >
+    insert into t_promotion_result
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="recordId != null" >
+        record_id,
+      </if>
+      <if test="executor != null" >
+        executor,
+      </if>
+      <if test="executeStatus != null" >
+        execute_status,
+      </if>
+      <if test="executeLabel != null" >
+        execute_label,
+      </if>
+      <if test="executeResult != null" >
+        execute_result,
+      </if>
+      <if test="executeResultDesc != null" >
+        execute_result_desc,
+      </if>
+      <if test="createdTime != null" >
+        created_time,
+      </if>
+      <if test="updatedTime != null" >
+        updated_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="recordId != null" >
+        #{recordId,jdbcType=BIGINT},
+      </if>
+      <if test="executor != null" >
+        #{executor,jdbcType=VARCHAR},
+      </if>
+      <if test="executeStatus != null" >
+        #{executeStatus,jdbcType=TINYINT},
+      </if>
+      <if test="executeLabel != null" >
+        #{executeLabel,jdbcType=VARCHAR},
+      </if>
+      <if test="executeResult != null" >
+        #{executeResult,jdbcType=TINYINT},
+      </if>
+      <if test="executeResultDesc != null" >
+        #{executeResultDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null" >
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedTime != null" >
+        #{updatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

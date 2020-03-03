@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wjp.dao.shiro.mapper.PromotionOriginalMapper">
+  <resultMap id="BaseResultMap" type="com.wjp.dao.shiro.entity.PromotionOriginal">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="product_code" jdbcType="VARCHAR" property="productCode" />
+    <result column="event_type" jdbcType="VARCHAR" property="eventType" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="register_id" jdbcType="BIGINT" property="registerId" />
+    <result column="business_id" jdbcType="BIGINT" property="businessId" />
+    <result column="source" jdbcType="TINYINT" property="source" />
+    <result column="promote_tasks_no" jdbcType="BIGINT" property="promoteTasksNo" />
+    <result column="promote_tasks_label" jdbcType="VARCHAR" property="promoteTasksLabel" />
+    <result column="mongo_id" jdbcType="VARCHAR" property="mongoId" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="updated_time" jdbcType="TIMESTAMP" property="updatedTime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.wjp.dao.shiro.entity.PromotionOriginal">
+    insert into t_promotion_original (id, product_code, event_type, 
+      mobile, register_id, business_id, 
+      source, promote_tasks_no, promote_tasks_label, 
+      mongo_id, created_time, updated_time
+      )
+    values (#{id,jdbcType=BIGINT}, #{productCode,jdbcType=VARCHAR}, #{eventType,jdbcType=VARCHAR}, 
+      #{mobile,jdbcType=VARCHAR}, #{registerId,jdbcType=BIGINT}, #{businessId,jdbcType=BIGINT}, 
+      #{source,jdbcType=TINYINT}, #{promoteTasksNo,jdbcType=BIGINT}, #{promoteTasksLabel,jdbcType=VARCHAR}, 
+      #{mongoId,jdbcType=VARCHAR}, #{createdTime,jdbcType=TIMESTAMP}, #{updatedTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wjp.dao.shiro.entity.PromotionOriginal">
+    insert into t_promotion_original
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="productCode != null">
+        product_code,
+      </if>
+      <if test="eventType != null">
+        event_type,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="registerId != null">
+        register_id,
+      </if>
+      <if test="businessId != null">
+        business_id,
+      </if>
+      <if test="source != null">
+        source,
+      </if>
+      <if test="promoteTasksNo != null">
+        promote_tasks_no,
+      </if>
+      <if test="promoteTasksLabel != null">
+        promote_tasks_label,
+      </if>
+      <if test="mongoId != null">
+        mongo_id,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="updatedTime != null">
+        updated_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="productCode != null">
+        #{productCode,jdbcType=VARCHAR},
+      </if>
+      <if test="eventType != null">
+        #{eventType,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="registerId != null">
+        #{registerId,jdbcType=BIGINT},
+      </if>
+      <if test="businessId != null">
+        #{businessId,jdbcType=BIGINT},
+      </if>
+      <if test="source != null">
+        #{source,jdbcType=TINYINT},
+      </if>
+      <if test="promoteTasksNo != null">
+        #{promoteTasksNo,jdbcType=BIGINT},
+      </if>
+      <if test="promoteTasksLabel != null">
+        #{promoteTasksLabel,jdbcType=VARCHAR},
+      </if>
+      <if test="mongoId != null">
+        #{mongoId,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedTime != null">
+        #{updatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.wjp.dao.shiro.entity.PromotionOriginal">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="product_code" jdbcType="VARCHAR" property="productCode" />
+    <result column="event_type" jdbcType="VARCHAR" property="eventType" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="register_id" jdbcType="BIGINT" property="registerId" />
+    <result column="business_id" jdbcType="BIGINT" property="businessId" />
+    <result column="source" jdbcType="TINYINT" property="source" />
+    <result column="promote_tasks_no" jdbcType="BIGINT" property="promoteTasksNo" />
+    <result column="promote_tasks_label" jdbcType="VARCHAR" property="promoteTasksLabel" />
+    <result column="mongo_id" jdbcType="VARCHAR" property="mongoId" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="updated_time" jdbcType="TIMESTAMP" property="updatedTime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.wjp.dao.shiro.entity.PromotionOriginal">
+    insert into t_promotion_original (id, product_code, event_type, 
+      mobile, register_id, business_id, 
+      source, promote_tasks_no, promote_tasks_label, 
+      mongo_id, created_time, updated_time
+      )
+    values (#{id,jdbcType=BIGINT}, #{productCode,jdbcType=VARCHAR}, #{eventType,jdbcType=VARCHAR}, 
+      #{mobile,jdbcType=VARCHAR}, #{registerId,jdbcType=BIGINT}, #{businessId,jdbcType=BIGINT}, 
+      #{source,jdbcType=TINYINT}, #{promoteTasksNo,jdbcType=BIGINT}, #{promoteTasksLabel,jdbcType=VARCHAR}, 
+      #{mongoId,jdbcType=VARCHAR}, #{createdTime,jdbcType=TIMESTAMP}, #{updatedTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wjp.dao.shiro.entity.PromotionOriginal">
+    insert into t_promotion_original
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="productCode != null">
+        product_code,
+      </if>
+      <if test="eventType != null">
+        event_type,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="registerId != null">
+        register_id,
+      </if>
+      <if test="businessId != null">
+        business_id,
+      </if>
+      <if test="source != null">
+        source,
+      </if>
+      <if test="promoteTasksNo != null">
+        promote_tasks_no,
+      </if>
+      <if test="promoteTasksLabel != null">
+        promote_tasks_label,
+      </if>
+      <if test="mongoId != null">
+        mongo_id,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="updatedTime != null">
+        updated_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="productCode != null">
+        #{productCode,jdbcType=VARCHAR},
+      </if>
+      <if test="eventType != null">
+        #{eventType,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="registerId != null">
+        #{registerId,jdbcType=BIGINT},
+      </if>
+      <if test="businessId != null">
+        #{businessId,jdbcType=BIGINT},
+      </if>
+      <if test="source != null">
+        #{source,jdbcType=TINYINT},
+      </if>
+      <if test="promoteTasksNo != null">
+        #{promoteTasksNo,jdbcType=BIGINT},
+      </if>
+      <if test="promoteTasksLabel != null">
+        #{promoteTasksLabel,jdbcType=VARCHAR},
+      </if>
+      <if test="mongoId != null">
+        #{mongoId,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedTime != null">
+        #{updatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.wjp.dao.shiro.entity.PromotionOriginal">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="product_code" jdbcType="VARCHAR" property="productCode" />
+    <result column="event_type" jdbcType="VARCHAR" property="eventType" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="register_id" jdbcType="BIGINT" property="registerId" />
+    <result column="business_id" jdbcType="BIGINT" property="businessId" />
+    <result column="source" jdbcType="TINYINT" property="source" />
+    <result column="promote_tasks_no" jdbcType="BIGINT" property="promoteTasksNo" />
+    <result column="promote_tasks_label" jdbcType="VARCHAR" property="promoteTasksLabel" />
+    <result column="mongo_id" jdbcType="VARCHAR" property="mongoId" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="updated_time" jdbcType="TIMESTAMP" property="updatedTime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.wjp.dao.shiro.entity.PromotionOriginal">
+    insert into t_promotion_original (id, product_code, event_type, 
+      mobile, register_id, business_id, 
+      source, promote_tasks_no, promote_tasks_label, 
+      mongo_id, created_time, updated_time
+      )
+    values (#{id,jdbcType=BIGINT}, #{productCode,jdbcType=VARCHAR}, #{eventType,jdbcType=VARCHAR}, 
+      #{mobile,jdbcType=VARCHAR}, #{registerId,jdbcType=BIGINT}, #{businessId,jdbcType=BIGINT}, 
+      #{source,jdbcType=TINYINT}, #{promoteTasksNo,jdbcType=BIGINT}, #{promoteTasksLabel,jdbcType=VARCHAR}, 
+      #{mongoId,jdbcType=VARCHAR}, #{createdTime,jdbcType=TIMESTAMP}, #{updatedTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wjp.dao.shiro.entity.PromotionOriginal">
+    insert into t_promotion_original
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="productCode != null">
+        product_code,
+      </if>
+      <if test="eventType != null">
+        event_type,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="registerId != null">
+        register_id,
+      </if>
+      <if test="businessId != null">
+        business_id,
+      </if>
+      <if test="source != null">
+        source,
+      </if>
+      <if test="promoteTasksNo != null">
+        promote_tasks_no,
+      </if>
+      <if test="promoteTasksLabel != null">
+        promote_tasks_label,
+      </if>
+      <if test="mongoId != null">
+        mongo_id,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="updatedTime != null">
+        updated_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="productCode != null">
+        #{productCode,jdbcType=VARCHAR},
+      </if>
+      <if test="eventType != null">
+        #{eventType,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="registerId != null">
+        #{registerId,jdbcType=BIGINT},
+      </if>
+      <if test="businessId != null">
+        #{businessId,jdbcType=BIGINT},
+      </if>
+      <if test="source != null">
+        #{source,jdbcType=TINYINT},
+      </if>
+      <if test="promoteTasksNo != null">
+        #{promoteTasksNo,jdbcType=BIGINT},
+      </if>
+      <if test="promoteTasksLabel != null">
+        #{promoteTasksLabel,jdbcType=VARCHAR},
+      </if>
+      <if test="mongoId != null">
+        #{mongoId,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedTime != null">
+        #{updatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.wjp.dao.shiro.entity.PromotionOriginal">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="product_code" jdbcType="VARCHAR" property="productCode" />
+    <result column="event_type" jdbcType="VARCHAR" property="eventType" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="register_id" jdbcType="BIGINT" property="registerId" />
+    <result column="business_id" jdbcType="BIGINT" property="businessId" />
+    <result column="source" jdbcType="TINYINT" property="source" />
+    <result column="promote_tasks_no" jdbcType="BIGINT" property="promoteTasksNo" />
+    <result column="promote_tasks_label" jdbcType="VARCHAR" property="promoteTasksLabel" />
+    <result column="mongo_id" jdbcType="VARCHAR" property="mongoId" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="updated_time" jdbcType="TIMESTAMP" property="updatedTime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.wjp.dao.shiro.entity.PromotionOriginal">
+    insert into t_promotion_original (id, product_code, event_type, 
+      mobile, register_id, business_id, 
+      source, promote_tasks_no, promote_tasks_label, 
+      mongo_id, created_time, updated_time
+      )
+    values (#{id,jdbcType=BIGINT}, #{productCode,jdbcType=VARCHAR}, #{eventType,jdbcType=VARCHAR}, 
+      #{mobile,jdbcType=VARCHAR}, #{registerId,jdbcType=BIGINT}, #{businessId,jdbcType=BIGINT}, 
+      #{source,jdbcType=TINYINT}, #{promoteTasksNo,jdbcType=BIGINT}, #{promoteTasksLabel,jdbcType=VARCHAR}, 
+      #{mongoId,jdbcType=VARCHAR}, #{createdTime,jdbcType=TIMESTAMP}, #{updatedTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wjp.dao.shiro.entity.PromotionOriginal">
+    insert into t_promotion_original
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="productCode != null">
+        product_code,
+      </if>
+      <if test="eventType != null">
+        event_type,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="registerId != null">
+        register_id,
+      </if>
+      <if test="businessId != null">
+        business_id,
+      </if>
+      <if test="source != null">
+        source,
+      </if>
+      <if test="promoteTasksNo != null">
+        promote_tasks_no,
+      </if>
+      <if test="promoteTasksLabel != null">
+        promote_tasks_label,
+      </if>
+      <if test="mongoId != null">
+        mongo_id,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="updatedTime != null">
+        updated_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="productCode != null">
+        #{productCode,jdbcType=VARCHAR},
+      </if>
+      <if test="eventType != null">
+        #{eventType,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="registerId != null">
+        #{registerId,jdbcType=BIGINT},
+      </if>
+      <if test="businessId != null">
+        #{businessId,jdbcType=BIGINT},
+      </if>
+      <if test="source != null">
+        #{source,jdbcType=TINYINT},
+      </if>
+      <if test="promoteTasksNo != null">
+        #{promoteTasksNo,jdbcType=BIGINT},
+      </if>
+      <if test="promoteTasksLabel != null">
+        #{promoteTasksLabel,jdbcType=VARCHAR},
+      </if>
+      <if test="mongoId != null">
+        #{mongoId,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedTime != null">
+        #{updatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>
