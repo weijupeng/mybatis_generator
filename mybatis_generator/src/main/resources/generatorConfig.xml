@@ -99,12 +99,12 @@
                selectByExampleQueryId="false"
         >
         </table>
-        <table schema="" tableName="t_promotion_enum" domainObjectName="PromotionEnum"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"
-        >
-        </table>
+        <!--<table schema="" tableName="t_promotion_enum" domainObjectName="PromotionEnum"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false"-->
+        <!--&gt;-->
+        <!--</table>-->
 
 
     </context>
