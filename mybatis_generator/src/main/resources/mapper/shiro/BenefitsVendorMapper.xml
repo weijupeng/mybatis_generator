@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wjp.dao.shiro.mapper.BenefitsVendorMapper" >
+  <resultMap id="BaseResultMap" type="com.wjp.dao.shiro.entity.BenefitsVendor" >
+    <result column="id" property="id" jdbcType="BIGINT" />
+    <result column="vendor_name" property="vendorName" jdbcType="VARCHAR" />
+    <result column="vendor_code" property="vendorCode" jdbcType="VARCHAR" />
+    <result column="vendor_type" property="vendorType" jdbcType="TINYINT" />
+    <result column="vendor_contract_no" property="vendorContractNo" jdbcType="VARCHAR" />
+    <result column="is_deleted" property="isDeleted" jdbcType="BIT" />
+    <result column="created_time" property="createdTime" jdbcType="TIMESTAMP" />
+    <result column="updated_time" property="updatedTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <insert id="insert" parameterType="com.wjp.dao.shiro.entity.BenefitsVendor" >
+    insert into t_benefits_vendor (id, vendor_name, vendor_code, 
+      vendor_type, vendor_contract_no, is_deleted, 
+      created_time, updated_time)
+    values (#{id,jdbcType=BIGINT}, #{vendorName,jdbcType=VARCHAR}, #{vendorCode,jdbcType=VARCHAR}, 
+      #{vendorType,jdbcType=TINYINT}, #{vendorContractNo,jdbcType=VARCHAR}, #{isDeleted,jdbcType=BIT}, 
+      #{createdTime,jdbcType=TIMESTAMP}, #{updatedTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wjp.dao.shiro.entity.BenefitsVendor" >
+    insert into t_benefits_vendor
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="vendorName != null" >
+        vendor_name,
+      </if>
+      <if test="vendorCode != null" >
+        vendor_code,
+      </if>
+      <if test="vendorType != null" >
+        vendor_type,
+      </if>
+      <if test="vendorContractNo != null" >
+        vendor_contract_no,
+      </if>
+      <if test="isDeleted != null" >
+        is_deleted,
+      </if>
+      <if test="createdTime != null" >
+        created_time,
+      </if>
+      <if test="updatedTime != null" >
+        updated_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="vendorName != null" >
+        #{vendorName,jdbcType=VARCHAR},
+      </if>
+      <if test="vendorCode != null" >
+        #{vendorCode,jdbcType=VARCHAR},
+      </if>
+      <if test="vendorType != null" >
+        #{vendorType,jdbcType=TINYINT},
+      </if>
+      <if test="vendorContractNo != null" >
+        #{vendorContractNo,jdbcType=VARCHAR},
+      </if>
+      <if test="isDeleted != null" >
+        #{isDeleted,jdbcType=BIT},
+      </if>
+      <if test="createdTime != null" >
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedTime != null" >
+        #{updatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

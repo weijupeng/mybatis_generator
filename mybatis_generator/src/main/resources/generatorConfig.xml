@@ -28,7 +28,7 @@
         </commentGenerator>
 
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-                        connectionURL="jdbc:mysql://10.139.60.82:3306/vmc_test?useUnicode=true;characterEncoding=UTF-8"
+                        connectionURL="jdbc:mysql://10.139.60.82:3306/vmc_dev?useUnicode=true;characterEncoding=UTF-8"
                         userId="dev"
                         password="dev123">
         </jdbcConnection>
@@ -69,42 +69,60 @@
 
 
 
-        <table schema="" tableName="t_promotion_original" domainObjectName="PromotionOriginal"
+        <table schema="" tableName="t_benefits_coupon_detail" domainObjectName="BenefitsCouponDetail"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"
         >
         </table>
-        <table schema="" tableName="t_promotion_record" domainObjectName="PromotionRecord"
+        <table schema="" tableName="t_benefits_coupon_type" domainObjectName="BenefitsCouponType"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"
         >
         </table>
-        <table schema="" tableName="t_promotion_result" domainObjectName="PromotionResult"
+        <table schema="" tableName="t_benefits_coupon_vendor" domainObjectName="BenefitsCouponVendor"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"
         >
         </table>
-        <table schema="" tableName="t_promotion_task" domainObjectName="PromotionTask"
+        <table schema="" tableName="t_benefits_order" domainObjectName="BenefitsOrder"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"
         >
         </table>
-        <table schema="" tableName="t_promotion_plan" domainObjectName="PromotionPlan"
+        <table schema="" tableName="t_benefits_order_payment" domainObjectName="BenefitsOrderPayment"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"
         >
         </table>
-        <!--<table schema="" tableName="t_promotion_enum" domainObjectName="PromotionEnum"-->
-               <!--enableCountByExample="false" enableUpdateByExample="false"-->
-               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
-               <!--selectByExampleQueryId="false"-->
-        <!--&gt;-->
-        <!--</table>-->
+        <table schema="" tableName="t_benefits_type" domainObjectName="BenefitsType"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"
+        >
+        </table>
+        <table schema="" tableName="t_benefits_user_record" domainObjectName="BenefitsUserRecord"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"
+        >
+        </table>
+        <table schema="" tableName="t_benefits_user_vendor" domainObjectName="BenefitsUserVendor"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"
+        >
+        </table>
+        <table schema="" tableName="t_benefits_vendor" domainObjectName="BenefitsVendor"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"
+        >
+        </table>
 
 
     </context>

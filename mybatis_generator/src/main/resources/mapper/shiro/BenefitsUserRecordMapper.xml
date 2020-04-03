@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wjp.dao.shiro.mapper.BenefitsUserRecordMapper" >
+  <resultMap id="BaseResultMap" type="com.wjp.dao.shiro.entity.BenefitsUserRecord" >
+    <result column="id" property="id" jdbcType="BIGINT" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="type_id" property="typeId" jdbcType="BIGINT" />
+    <result column="order_id" property="orderId" jdbcType="BIGINT" />
+    <result column="user_source" property="userSource" jdbcType="TINYINT" />
+    <result column="expried_time" property="expriedTime" jdbcType="VARCHAR" />
+    <result column="start_time" property="startTime" jdbcType="VARCHAR" />
+    <result column="is_first_be_vip" property="isFirstBeVip" jdbcType="TINYINT" />
+    <result column="is_auto_renew" property="isAutoRenew" jdbcType="TINYINT" />
+    <result column="user_status" property="userStatus" jdbcType="TINYINT" />
+    <result column="is_deleted" property="isDeleted" jdbcType="BIT" />
+    <result column="created_time" property="createdTime" jdbcType="TIMESTAMP" />
+    <result column="updated_time" property="updatedTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <insert id="insert" parameterType="com.wjp.dao.shiro.entity.BenefitsUserRecord" >
+    insert into t_benefits_user_record (id, user_id, type_id, 
+      order_id, user_source, expried_time, 
+      start_time, is_first_be_vip, is_auto_renew, 
+      user_status, is_deleted, created_time, 
+      updated_time)
+    values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{typeId,jdbcType=BIGINT}, 
+      #{orderId,jdbcType=BIGINT}, #{userSource,jdbcType=TINYINT}, #{expriedTime,jdbcType=VARCHAR}, 
+      #{startTime,jdbcType=VARCHAR}, #{isFirstBeVip,jdbcType=TINYINT}, #{isAutoRenew,jdbcType=TINYINT}, 
+      #{userStatus,jdbcType=TINYINT}, #{isDeleted,jdbcType=BIT}, #{createdTime,jdbcType=TIMESTAMP}, 
+      #{updatedTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wjp.dao.shiro.entity.BenefitsUserRecord" >
+    insert into t_benefits_user_record
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="typeId != null" >
+        type_id,
+      </if>
+      <if test="orderId != null" >
+        order_id,
+      </if>
+      <if test="userSource != null" >
+        user_source,
+      </if>
+      <if test="expriedTime != null" >
+        expried_time,
+      </if>
+      <if test="startTime != null" >
+        start_time,
+      </if>
+      <if test="isFirstBeVip != null" >
+        is_first_be_vip,
+      </if>
+      <if test="isAutoRenew != null" >
+        is_auto_renew,
+      </if>
+      <if test="userStatus != null" >
+        user_status,
+      </if>
+      <if test="isDeleted != null" >
+        is_deleted,
+      </if>
+      <if test="createdTime != null" >
+        created_time,
+      </if>
+      <if test="updatedTime != null" >
+        updated_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="typeId != null" >
+        #{typeId,jdbcType=BIGINT},
+      </if>
+      <if test="orderId != null" >
+        #{orderId,jdbcType=BIGINT},
+      </if>
+      <if test="userSource != null" >
+        #{userSource,jdbcType=TINYINT},
+      </if>
+      <if test="expriedTime != null" >
+        #{expriedTime,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null" >
+        #{startTime,jdbcType=VARCHAR},
+      </if>
+      <if test="isFirstBeVip != null" >
+        #{isFirstBeVip,jdbcType=TINYINT},
+      </if>
+      <if test="isAutoRenew != null" >
+        #{isAutoRenew,jdbcType=TINYINT},
+      </if>
+      <if test="userStatus != null" >
+        #{userStatus,jdbcType=TINYINT},
+      </if>
+      <if test="isDeleted != null" >
+        #{isDeleted,jdbcType=BIT},
+      </if>
+      <if test="createdTime != null" >
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedTime != null" >
+        #{updatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

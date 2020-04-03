@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wjp.dao.shiro.mapper.BenefitsTypeMapper" >
+  <resultMap id="BaseResultMap" type="com.wjp.dao.shiro.entity.BenefitsType" >
+    <result column="id" property="id" jdbcType="BIGINT" />
+    <result column="benefits_level" property="benefitsLevel" jdbcType="TINYINT" />
+    <result column="benefits_type" property="benefitsType" jdbcType="TINYINT" />
+    <result column="benefits_fee" property="benefitsFee" jdbcType="DECIMAL" />
+    <result column="expires" property="expires" jdbcType="INTEGER" />
+    <result column="is_deleted" property="isDeleted" jdbcType="BIT" />
+    <result column="created_time" property="createdTime" jdbcType="TIMESTAMP" />
+    <result column="updated_time" property="updatedTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <insert id="insert" parameterType="com.wjp.dao.shiro.entity.BenefitsType" >
+    insert into t_benefits_type (id, benefits_level, benefits_type, 
+      benefits_fee, expires, is_deleted, 
+      created_time, updated_time)
+    values (#{id,jdbcType=BIGINT}, #{benefitsLevel,jdbcType=TINYINT}, #{benefitsType,jdbcType=TINYINT}, 
+      #{benefitsFee,jdbcType=DECIMAL}, #{expires,jdbcType=INTEGER}, #{isDeleted,jdbcType=BIT}, 
+      #{createdTime,jdbcType=TIMESTAMP}, #{updatedTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wjp.dao.shiro.entity.BenefitsType" >
+    insert into t_benefits_type
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="benefitsLevel != null" >
+        benefits_level,
+      </if>
+      <if test="benefitsType != null" >
+        benefits_type,
+      </if>
+      <if test="benefitsFee != null" >
+        benefits_fee,
+      </if>
+      <if test="expires != null" >
+        expires,
+      </if>
+      <if test="isDeleted != null" >
+        is_deleted,
+      </if>
+      <if test="createdTime != null" >
+        created_time,
+      </if>
+      <if test="updatedTime != null" >
+        updated_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="benefitsLevel != null" >
+        #{benefitsLevel,jdbcType=TINYINT},
+      </if>
+      <if test="benefitsType != null" >
+        #{benefitsType,jdbcType=TINYINT},
+      </if>
+      <if test="benefitsFee != null" >
+        #{benefitsFee,jdbcType=DECIMAL},
+      </if>
+      <if test="expires != null" >
+        #{expires,jdbcType=INTEGER},
+      </if>
+      <if test="isDeleted != null" >
+        #{isDeleted,jdbcType=BIT},
+      </if>
+      <if test="createdTime != null" >
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedTime != null" >
+        #{updatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wjp.dao.shiro.mapper.BenefitsCouponTypeMapper" >
+  <resultMap id="BaseResultMap" type="com.wjp.dao.shiro.entity.BenefitsCouponType" >
+    <result column="id" property="id" jdbcType="BIGINT" />
+    <result column="coupon_name" property="couponName" jdbcType="VARCHAR" />
+    <result column="coupon_type" property="couponType" jdbcType="TINYINT" />
+    <result column="coupon_amount" property="couponAmount" jdbcType="DECIMAL" />
+    <result column="user_receive_num_limit" property="userReceiveNumLimit" jdbcType="INTEGER" />
+    <result column="apply_limit_amount" property="applyLimitAmount" jdbcType="DECIMAL" />
+    <result column="expire_time" property="expireTime" jdbcType="VARCHAR" />
+    <result column="coupon_desc" property="couponDesc" jdbcType="VARCHAR" />
+    <result column="is_valid" property="isValid" jdbcType="BIT" />
+    <result column="is_deleted" property="isDeleted" jdbcType="BIT" />
+    <result column="created_time" property="createdTime" jdbcType="TIMESTAMP" />
+    <result column="updated_time" property="updatedTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <insert id="insert" parameterType="com.wjp.dao.shiro.entity.BenefitsCouponType" >
+    insert into t_benefits_coupon_type (id, coupon_name, coupon_type, 
+      coupon_amount, user_receive_num_limit, apply_limit_amount, 
+      expire_time, coupon_desc, is_valid, 
+      is_deleted, created_time, updated_time
+      )
+    values (#{id,jdbcType=BIGINT}, #{couponName,jdbcType=VARCHAR}, #{couponType,jdbcType=TINYINT}, 
+      #{couponAmount,jdbcType=DECIMAL}, #{userReceiveNumLimit,jdbcType=INTEGER}, #{applyLimitAmount,jdbcType=DECIMAL}, 
+      #{expireTime,jdbcType=VARCHAR}, #{couponDesc,jdbcType=VARCHAR}, #{isValid,jdbcType=BIT}, 
+      #{isDeleted,jdbcType=BIT}, #{createdTime,jdbcType=TIMESTAMP}, #{updatedTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wjp.dao.shiro.entity.BenefitsCouponType" >
+    insert into t_benefits_coupon_type
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="couponName != null" >
+        coupon_name,
+      </if>
+      <if test="couponType != null" >
+        coupon_type,
+      </if>
+      <if test="couponAmount != null" >
+        coupon_amount,
+      </if>
+      <if test="userReceiveNumLimit != null" >
+        user_receive_num_limit,
+      </if>
+      <if test="applyLimitAmount != null" >
+        apply_limit_amount,
+      </if>
+      <if test="expireTime != null" >
+        expire_time,
+      </if>
+      <if test="couponDesc != null" >
+        coupon_desc,
+      </if>
+      <if test="isValid != null" >
+        is_valid,
+      </if>
+      <if test="isDeleted != null" >
+        is_deleted,
+      </if>
+      <if test="createdTime != null" >
+        created_time,
+      </if>
+      <if test="updatedTime != null" >
+        updated_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="couponName != null" >
+        #{couponName,jdbcType=VARCHAR},
+      </if>
+      <if test="couponType != null" >
+        #{couponType,jdbcType=TINYINT},
+      </if>
+      <if test="couponAmount != null" >
+        #{couponAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="userReceiveNumLimit != null" >
+        #{userReceiveNumLimit,jdbcType=INTEGER},
+      </if>
+      <if test="applyLimitAmount != null" >
+        #{applyLimitAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="expireTime != null" >
+        #{expireTime,jdbcType=VARCHAR},
+      </if>
+      <if test="couponDesc != null" >
+        #{couponDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="isValid != null" >
+        #{isValid,jdbcType=BIT},
+      </if>
+      <if test="isDeleted != null" >
+        #{isDeleted,jdbcType=BIT},
+      </if>
+      <if test="createdTime != null" >
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedTime != null" >
+        #{updatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>
